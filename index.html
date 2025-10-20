@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benji Alwis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --linkedin-blue: #0A66C2;
+      --linkedin-light: #E6F0FA;
+      --text-color: #1a1a1a;
+      --bg-color: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
+
+    .header-banner {
+      background-image: url('back02.jpg'); 
+      background-size: cover;
+      background-position: center;
+      height: 360px;
+      position: relative;
+    }
+
+    .profile-photo {
+      position: absolute;
+      bottom: -210px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 4px solid white;
+      background-color: #ccc;
+      background-image: url('roundba.png'); 
+      background-size: cover;
+      background-position: center;
+      z-index: 20;
+    }
+
+    .profile-card {
+      background-color: white;
+      max-width: 900px;
+      margin: 80px auto 0;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 10;
+      text-align: center;
+    }
+
+    .profile-card h1 {
+      margin-top: 160px;
+      font-size: 2em;
+      color: var(--linkedin-blue);
+    }
+
+    .profile-card h2 {
+      color: var(--linkedin-blue);
+      margin-top: 0;
+    }
+
+    .profile-card p {
+      margin: 8px 0;
+      font-size: 1em;
+    }
+
+    .contact-info, .stats {
+      margin-top: 12px;
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      flex-wrap: wrap;
+    }
+
+    .section-content {
+        display: flex;
+        align-items: flex-start;
+        gap: 2em;
+        flex-wrap: wrap;
+        text-align: center;
+      }
+      
+      .section-content img {
+        float: left;
+        width: 300px;
+        border-radius: 8px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        flex-shrink: 0;
+      }
+      
+      .section-content::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      .contact-info h4 {
+        margin-top: 1em;
+        color: #0A66C2;
+      }
+
+      .section-content p:first-of-type {
+        text-align: center;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 1em;
+      }
+      
+      .contact-info {
+        margin: 0 auto;
+        max-width: 440px;
+        text-align: left;
+      }
+      
+      .contact-info ul {
+        padding-left: 0;
+        margin: 0;
+      }
+      
+      .ventures-section {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+      
+      .ventures-section h2 {
+        color: #0A66C2;
+        margin-bottom: 0.5em;
+      }
+      
+      .ventures-section p.intro {
+        font-size: 1.1em;
+        margin-bottom: 2em;
+      }
+      
+      .venture-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2em;
+      }
+      
+      .venture-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        padding: 20px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .venture-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        margin-bottom: 1em;
+      }
+      
+      .venture-card h3 {
+        margin: 0;
+        color: #0A66C2;
+        font-size: 1.2em;
+      }
+      
+      .venture-card .one-liner {
+        font-weight: 600;
+        margin: 0.5em 0;
+      }
+      
+      .venture-card p {
+        flex-grow: 1;
+      }
+      
+      .venture-card a {
+        margin-top: 1em;
+        text-decoration: none;
+        color: #0A66C2;
+        font-weight: 600;
+      }
+
+      .research-section {
+        max-width: 1000px;
+        margin: 60px auto;
+        padding: 0 20px;
+      }
+      
+      .research-section h2 {
+        color: #0A66C2;
+        text-align: center;
+        margin-bottom: 0.5em;
+      }
+      
+      .research-section p {
+        font-size: 1.1em;
+        text-align: center;
+        margin-bottom: 1.5em;
+      }
+      
+      .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5em;
+        margin-bottom: 1.5em;
+      }
+      
+      .tag-list span {
+        background-color: #E6F0FA;
+        color: #0A66C2;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+      }
+      
+      .research-cta {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        margin-bottom: 2em;
+      }
+      
+      .research-cta a {
+        text-decoration: none;
+        background-color: #0A66C2;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-weight: 600;
+      }
+      
+      .publication-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5em;
+        text-align: center;
+      }
+      
+      .publication {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        padding: 16px;
+      }
+      
+      .publication h4 {
+        margin: 0;
+        color: #0A66C2;
+      }
+      
+      .publication p {
+        margin: 0.5em 0;
+      }
+      
+      .publication a {
+        color: #0A66C2;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      @media (max-width: 700px) {
+        .section-content {
+          flex-direction: column;
+          text-align: center;
+        }
+      
+        .section-content img {
+          max-width: 100%;
+        }
+      }
+
+    @media (max-width: 600px) {
+      .profile-card {
+        padding: 16px;
+      }
+
+      .stats {
+        flex-direction: column;
+        gap: 0.5em;
+      }
+
+      .profile-photo {
+        width: 100px;
+        height: 100px;
+        bottom: -50px;
+      }
+
+      .profile-card h1 {
+        margin-top: 50px;
+        font-size: 1.6em;
+      }
+
+      
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-banner">
+    <div class="profile-photo"></div>
+  </div>
+
+  <div class="profile-card">
+    <h1>Benji Alwis</h1>
+    <h3><p><em><b> Hi, I’m Benji — I build intelligent systems that make everyday life work better. </b></em></p></h3>
+  </div>
+
+
+  <div class="profile-card" id="about">
+    <h2>About Me</h2>
+    <div class="section-content">
+      <div>
+        <p><em><strong><h4>Explorer at heart. Builder by habit.</h4></strong></em></p>
+        <p>
+          I grew up in historic York, where curiosity meant taking things apart before learning how to build them better.
+          After a formative research year at the University of York, I moved to Boston to study Computer Science at Northeastern
+          and pursue my entrepreneurial dream. I see technology as a bridge between ideas and people. Whether I’m prototyping AI systems,
+          exploring robot manipulation, or shipping small products, my goal is the same: <strong>build what matters and learn in public.</strong>
+        </p>
+  
+        <div class="contact-info">
+          <h4>Quick Facts</h4>
+          <ul style="list-style: none;">
+            <li>📍 Base: Boston, MA (from York, UK)</li>
+            <li>🎓 Studying: Computer Science @ Northeastern University</li>
+            <li>🔬 Focus: AI, Robotics, Human-centred tech</li>
+            <li>💬 Motto: Build what matters</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="ventures-section" id="ventures">
+    <h2>Ventures</h2>
+    <p class="intro">I like to test ideas fast. Below are a few active/archived experiments and ventures.</p>
+  
+    <div class="venture-grid">
+      <div class="venture-card">
+        <img src="fineneedles.png" alt="FineNeedles logo or mockup" />
+        <h3>FineNeedles — AI for undiscovered opportunities</h3>
+        <p class="one-liner">AI that helps investors discover opportunities hidden in plain sight.</p>
+        <p>While the world focuses on obvious stars, FineNeedles uses signal-driven analysis to surface undervalued gems—so investors can act earlier, with more conviction.</p>
+        <a href="https://www.findneedles.com/">Learn more</a>
+      </div>
+  
+      <div class="venture-card">
+        <img src="workoutsbuddy.jpg" alt="WorkoutsBuddy logo or mockup" />
+        <h3>WorkoutsBuddy — Your AI training partner</h3>
+        <p class="one-liner">Personalised workouts and guidance for gym-goers and travellers.</p>
+        <p>Tailored programmes, progress tracking, and actionable insights that make training consistent—and more effective—wherever you are.</p>
+        <a href="https://www.workoutsbuddy.com/">Learn more</a>
+      </div>
+  
+      <div class="venture-card">
+        <img src="booksrack.jpg" alt="BooksRack or BooksBridge logo" />
+        <h3>BooksRack — Turning idle books into active knowledge</h3>
+        <p class="one-liner">A platform that connects donors with readers to extend a book’s life.</p>
+        <p>Our BooksBridge initiative helps library surpluses find homes in schools worldwide, using AI to match needs with supply.</p>
+        <a href="http://booksrack.org/">Learn more</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="research-section" id="research">
+    <h2>Researching the frontiers of AI & robotics</h2>
+    <p>
+      I’ve conducted research under Prof. Nick Pears and Dr. Pengcheng Liu at the University of York, focusing on machine learning and robotics.
+      My interests include few-shot learning, robot pick-and-place, and soft robotics. I’m also fascinated by how technological change interacts with society and history.
+    </p>
+  
+    <div class="tag-list">
+      <span>#Meta-Learning</span>
+      <span>#Few-Shot</span>
+      <span>#RobotManipulation</span>
+      <span>#SoftRobotics</span>
+      <span>#Human-Tech</span>
+    </div>
+
+    <h2>Publications</h2>
+    <div class="publication-list">
+      <div class="publication">
+        <h4>Meta-Learning for Multi-View Visuomotor Systems (2023)</h4>
+        <p>Adaptive control across multiple sensory modalities.</p>
+        <a href="https://arxiv.org/abs/2310.20414">Read on arXiv →</a>
+      </div>
+  
+      <div class="publication">
+        <h4>Few-Shot Learning for Robotic Pick-and-Place (2022)</h4>
+        <p>Training robots to generalise from minimal examples.</p>
+        <a href="https://arxiv.org/abs/2311.00727">Read on arXiv →</a>
+      </div>
+  
+      <div class="publication">
+        <h4>Soft Robotics and Human-Centred Design (2021)</h4>
+        <p>Exploring tactile interfaces and flexible materials for social robotics.</p>
+        <a href="https://arxiv.org/abs/2311.10097">Read on arXiv →</a>
+      </div>
+    </div>
+  </div>
+ 
+
+</body>
+</html>
